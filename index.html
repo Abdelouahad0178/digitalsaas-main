@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon DIGITAL Avancé</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Intégration de Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo"><img src="/LOGO.png" alt="Logo"></a>
+            <ul class="nav-links">
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#pricing">Tarifs</a></li>
+                <li><a href="#about">À Propos</a></li> <!-- Nouveau lien -->
+                <li><a href="#blog">Blog</a></li> <!-- Nouveau lien -->
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn-login">Connexion</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero">
+        <div class="container">
+            <h1>Découvrez Notre Solution DIGITALE Avancée</h1>
+            <p>Optimisez votre activité avec nos outils digitaux puissants.</p>
+            <a href="#pricing" class="btn-primary">Commencer Maintenant</a>
+        </div>
+    </header>
+
+    <!-- Fonctionnalités -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Fonctionnalités</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Gestion Intelligente</h3>
+                    <p>Optimisez vos processus avec notre gestion intelligente.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Analyse Avancée</h3>
+                    <p>Des outils d'analyse puissants pour prendre des décisions éclairées.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Support 24/7</h3>
+                    <p>Une assistance disponible à tout moment pour vous aider.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarification -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Tarifs</h2>
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Vente Directe</h3>
+                    <p class="price">990 DHS</p>
+                    <ul>
+                        <li>Accès complet</li>
+                        <li>Mises à jour gratuites</li>
+                        <li>Support standard</li>
+                    </ul>
+                    <button class="btn-secondary" id="buy-now">Acheter Maintenant</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Location Mensuelle</h3>
+                    <p class="price">1OO DHS/mois</p>
+                    <ul>
+                        <li>Accès complet</li>
+                        <li>Mises à jour régulières</li>
+                        <li>Support prioritaire</li>
+                    </ul>
+                    <button class="btn-secondary" id="subscribe-monthly">S'abonner</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Location Annuelle</h3>
+                    <p class="price">1000 DHS/an</p>
+                    <ul>
+                        <li>Accès complet</li>
+                        <li>Mises à jour régulières</li>
+                        <li>Support prioritaire</li>
+                    </ul>
+                    <button class="btn-secondary" id="subscribe-yearly">S'abonner</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>Mon LOGICIEL</h3>
+                    <p>Votre partenaire pour des solutions digitales innovantes.</p>
+                </div>
+                <div class="footer-section links">
+                    <h4>Liens Utiles</h4>
+                    <ul>
+                        <li><a href="#features">Fonctionnalités</a></li>
+                        <li><a href="#pricing">Tarifs</a></li>
+                        <li><a href="#about">À Propos</a></li> <!-- Nouveau lien -->
+                        <li><a href="#blog">Blog</a></li> <!-- Nouveau lien -->
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact</h4>
+                    <p>Email: support@monsaas.com</p>
+                    <p>Téléphone: +212773794893</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 W DIGITAL. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Paiement -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Paiement</h2>
+            <form id="payment-form">
+                <div id="card-element"><!-- Stripe.js injectera les champs de carte ici --></div>
+                <button type="submit" class="btn-primary">Payer</button>
+                <div id="card-errors" role="alert"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
