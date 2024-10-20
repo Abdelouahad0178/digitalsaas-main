@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon DIGITAL Avancé</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Intégration de Stripe.js -->
     <script src="https://js.stripe.com/v3/"></script>
 </head>
@@ -14,14 +15,21 @@
         <div class="container">
             <a href="#" class="logo"><img src="/LOGO.png" alt="Logo"></a>
             <ul class="nav-links">
-                <li><a href="#features">Fonctionnalités</a></li>
-                <li><a href="#pricing">Tarifs</a></li>
-                <li><a href="#about">À Propos</a></li> <!-- Nouveau lien -->
-                <li><a href="#blog">Blog</a></li> <!-- Nouveau lien -->
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="btn-login">Connexion</a></li>
+                <li><a href="#features" data-i18n="features">Fonctionnalités</a></li>
+                <li><a href="#pricing" data-i18n="pricing">Tarifs</a></li>
+                <li><a href="#about" data-i18n="about">À Propos</a></li>
+                <li><a href="#blog" data-i18n="blog">Blog</a></li>
+                <li><a href="#contact" data-i18n="contact">Contact</a></li>
+                <li><a href="#" class="btn-login" data-i18n="login">Connexion</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="language-selector">
+                <select id="language-select" aria-label="Sélecteur de langue">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+            <div class="hamburger" aria-label="Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -32,28 +40,28 @@
     <!-- Header -->
     <header class="hero">
         <div class="container">
-            <h1>Découvrez Notre Solution DIGITALE Avancée</h1>
-            <p>Optimisez votre activité avec nos outils digitaux puissants.</p>
-            <a href="#pricing" class="btn-primary">Commencer Maintenant</a>
+            <h1 data-i18n="heroTitle">Découvrez Notre Solution DIGITALE Avancée</h1>
+            <p data-i18n="heroSubtitle">Optimisez votre activité avec nos outils digitaux puissants.</p>
+            <a href="#pricing" class="btn-primary" data-i18n="heroButton">Commencer Maintenant</a>
         </div>
     </header>
 
     <!-- Fonctionnalités -->
     <section id="features" class="features">
         <div class="container">
-            <h2>Fonctionnalités</h2>
+            <h2 data-i18n="featuresTitle">Fonctionnalités</h2>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <h3>Gestion Intelligente</h3>
-                    <p>Optimisez vos processus avec notre gestion intelligente.</p>
+                    <h3 data-i18n="feature1Title">Gestion Intelligente</h3>
+                    <p data-i18n="feature1Desc">Optimisez vos processus avec notre gestion intelligente.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Analyse Avancée</h3>
-                    <p>Des outils d'analyse puissants pour prendre des décisions éclairées.</p>
+                    <h3 data-i18n="feature2Title">Analyse Avancée</h3>
+                    <p data-i18n="feature2Desc">Des outils d'analyse puissants pour prendre des décisions éclairées.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Support 24/7</h3>
-                    <p>Une assistance disponible à tout moment pour vous aider.</p>
+                    <h3 data-i18n="feature3Title">Support 24/7</h3>
+                    <p data-i18n="feature3Desc">Une assistance disponible à tout moment pour vous aider.</p>
                 </div>
             </div>
         </div>
@@ -62,37 +70,37 @@
     <!-- Tarification -->
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2>Tarifs</h2>
+            <h2 data-i18n="pricingTitle">Tarifs</h2>
             <div class="pricing-options">
                 <div class="pricing-card">
-                    <h3>Vente Directe</h3>
-                    <p class="price">990 DHS</p>
+                    <h3 data-i18n="pricingOption1">Vente Directe</h3>
+                    <p class="price" data-i18n="pricingOption1Price">990 DHS</p>
                     <ul>
-                        <li>Accès complet</li>
-                        <li>Mises à jour gratuites</li>
-                        <li>Support standard</li>
+                        <li data-i18n="pricingOption1Features.0">Accès complet</li>
+                        <li data-i18n="pricingOption1Features.1">Mises à jour gratuites</li>
+                        <li data-i18n="pricingOption1Features.2">Support standard</li>
                     </ul>
-                    <button class="btn-secondary" id="buy-now">Acheter Maintenant</button>
+                    <button class="btn-secondary" id="buy-now" data-i18n="buyNow">Acheter Maintenant</button>
                 </div>
                 <div class="pricing-card">
-                    <h3>Location Mensuelle</h3>
-                    <p class="price">1OO DHS/mois</p>
+                    <h3 data-i18n="pricingOption2">Location Mensuelle</h3>
+                    <p class="price" data-i18n="pricingOption2Price">100 DHS/mois</p>
                     <ul>
-                        <li>Accès complet</li>
-                        <li>Mises à jour régulières</li>
-                        <li>Support prioritaire</li>
+                        <li data-i18n="pricingOption2Features.0">Accès complet</li>
+                        <li data-i18n="pricingOption2Features.1">Mises à jour régulières</li>
+                        <li data-i18n="pricingOption2Features.2">Support prioritaire</li>
                     </ul>
-                    <button class="btn-secondary" id="subscribe-monthly">S'abonner</button>
+                    <button class="btn-secondary" id="subscribe-monthly" data-i18n="subscribe">S'abonner</button>
                 </div>
                 <div class="pricing-card">
-                    <h3>Location Annuelle</h3>
-                    <p class="price">1000 DHS/an</p>
+                    <h3 data-i18n="pricingOption3">Location Annuelle</h3>
+                    <p class="price" data-i18n="pricingOption3Price">1000 DHS/an</p>
                     <ul>
-                        <li>Accès complet</li>
-                        <li>Mises à jour régulières</li>
-                        <li>Support prioritaire</li>
+                        <li data-i18n="pricingOption3Features.0">Accès complet</li>
+                        <li data-i18n="pricingOption3Features.1">Mises à jour régulières</li>
+                        <li data-i18n="pricingOption3Features.2">Support prioritaire</li>
                     </ul>
-                    <button class="btn-secondary" id="subscribe-yearly">S'abonner</button>
+                    <button class="btn-secondary" id="subscribe-yearly" data-i18n="subscribe">S'abonner</button>
                 </div>
             </div>
         </div>
@@ -104,42 +112,51 @@
             <div class="footer-content">
                 <div class="footer-section about">
                     <h3>Mon LOGICIEL</h3>
-                    <p>Votre partenaire pour des solutions digitales innovantes.</p>
+                    <p data-i18n="footerAbout">Votre partenaire pour des solutions digitales innovantes.</p>
                 </div>
                 <div class="footer-section links">
-                    <h4>Liens Utiles</h4>
+                    <h4 data-i18n="footerLinks">Liens Utiles</h4>
                     <ul>
-                        <li><a href="#features">Fonctionnalités</a></li>
-                        <li><a href="#pricing">Tarifs</a></li>
-                        <li><a href="#about">À Propos</a></li> <!-- Nouveau lien -->
-                        <li><a href="#blog">Blog</a></li> <!-- Nouveau lien -->
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#features" data-i18n="features">Fonctionnalités</a></li>
+                        <li><a href="#pricing" data-i18n="pricing">Tarifs</a></li>
+                        <li><a href="#about" data-i18n="about">À Propos</a></li>
+                        <li><a href="#blog" data-i18n="blog">Blog</a></li>
+                        <li><a href="#contact" data-i18n="contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section contact">
-                    <h4>Contact</h4>
-                    <p>Email: support@monsaas.com</p>
-                    <p>Téléphone: +212773794893</p>
+                    <h4 data-i18n="footerContact">Contact</h4>
+                    <p data-i18n="footerEmail">Email: support@monsaas.com</p>
+                    <p data-i18n="footerPhone">Téléphone: +212773794893</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2024 W DIGITAL. Tous droits réservés.
-            </div>
+            <div class="footer-bottom" data-i18n="footerRights">&copy; 2024 W DIGITAL. Tous droits réservés.</div>
         </div>
     </footer>
 
     <!-- Modal de Paiement -->
-    <div id="payment-modal" class="modal">
+    <div id="payment-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="payment-modal-title">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Paiement</h2>
+            <span class="close-button" aria-label="Fermer">&times;</span>
+            <h2 id="payment-modal-title" data-i18n="paymentTitle">Paiement</h2>
             <form id="payment-form">
                 <div id="card-element"><!-- Stripe.js injectera les champs de carte ici --></div>
-                <button type="submit" class="btn-primary">Payer</button>
+                <button type="submit" class="btn-primary" data-i18n="paymentButton">Payer</button>
                 <div id="card-errors" role="alert"></div>
             </form>
         </div>
     </div>
+
+<!-- Icônes Réseaux Sociaux -->
+<div class="social-icons">
+    <button class="social-btn whatsapp"><a href="https://wa.me/+212773794893"><i class="fab fa-whatsapp"></i></a></button>
+        <button class="social-btn facebook"><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></button>
+        <button class="social-btn instagram"><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></button>
+</div>
+
+
+
+
 
     <script src="script.js"></script>
 </body>
